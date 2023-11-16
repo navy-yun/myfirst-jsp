@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,7 +7,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSP 기초 - 심플 계산기</title>
-    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <div id="container">
@@ -23,9 +23,38 @@
             <input type="number" name="num2">
         </div>
         <div>
-            <input type="submit" value="=">
+            <input type="submit" value="="> <%=request.getAttribute("result")%>
         </div>
     </form>
 </div>
 </body>
+<style>
+    html {
+        height: 100%;
+    }
+    body {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60%;
+    }
+    h3 {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    #container {
+        border-style: solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 150px;
+    }
+    input[type="number"] {
+        width: 50px;
+        margin-bottom: 10px;
+    }
+</style>
 </html>
